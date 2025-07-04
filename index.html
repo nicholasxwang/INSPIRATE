@@ -35,7 +35,13 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         .hero-gradient-bg {
             background: linear-gradient(
                     120deg,
@@ -103,26 +109,47 @@
 <body class="text-white">
 
 <!-- Translucent Emerald Navbar -->
-<nav class="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-md bg-black/30 border border-emerald-500/30 rounded-xl shadow-lg shadow-emerald-900/50" style="width: 800px">
-    <div class="flex flex-row justify-between items-center px-6 py-4 space-x-2">
+<nav class="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-md bg-black/30 border border-emerald-500/30 rounded-xl shadow-lg shadow-emerald-900/50 w-[95%] max-w-3xl">
+    <div class="flex justify-between items-center px-6 py-4">
 
-        <!-- Brand stacked -->
-        <div class="text-center text-white font-extrabold tracking-wide leading-none select-none">
+        <!-- Brand -->
+        <div class="text-white font-extrabold tracking-wide select-none">
             <div class="text-xl text-emerald-400">INSPIRATE</div>
             <div class="text-xs">CONSULTING</div>
         </div>
 
-        <!-- Navigation Links -->
-        <div class="flex space-x-8 text-sm text-white/90 font-medium">
-            <a href="#story" class="hover:text-emerald-400 transition">Why Us</a>
-            <a href="#how" class="hover:text-emerald-400 transition">How It Works</a>
-            <a href="#testimonials" class="hover:text-emerald-400 transition">Results</a>
-            <a href="#call" class="hover:text-emerald-400 transition">Start</a>
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8 text-sm text-white/90 font-medium">
+            <a href="#whyus" class="hover:text-emerald-400 transition">Why Us</a>
+            <a href="#flow" class="hover:text-emerald-400 transition">How It Works</a>
+            <a href="#testimonials" class="hover:text-emerald-400 transition">Testimonials</a>
+            <a href="#video" class="hover:text-emerald-400 transition">Intro Video</a>
         </div>
 
-        <!-- CTA Button -->
+        <!-- Desktop CTA Button -->
         <a href="https://calendly.com/inspirateconsulting/15min" target="_blank"
-           class="  px-6 py-2 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-300 hover:bg-emerald-500/50 transition shadow-md shadow-emerald-500/20 hover:animate-none font-semibold">
+           class="hidden md:inline-block px-6 py-2 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-300 hover:bg-emerald-500/50 transition shadow-md shadow-emerald-500/20 font-semibold">
+            Book Call
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle Menu"
+                class="md:hidden flex items-center justify-center p-2 rounded-lg text-emerald-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden flex-col space-y-4 px-6 py-6 bg-black/50 border-t border-emerald-500/20 backdrop-blur-sm rounded-b-xl shadow-lg transition-all duration-300 ease-out opacity-0 scale-95">
+        <a href="#whyus" class="block text-lg text-white/90 hover:text-emerald-400 transition py-2 rounded hover:bg-emerald-500/10">Why Us</a>
+        <a href="#flow" class="block text-lg text-white/90 hover:text-emerald-400 transition py-2 rounded hover:bg-emerald-500/10">How It Works</a>
+        <a href="#testimonials" class="block text-lg text-white/90 hover:text-emerald-400 transition py-2 rounded hover:bg-emerald-500/10">Testimonials</a>
+        <a href="#video" class="block text-lg text-white/90 hover:text-emerald-400 transition py-2 rounded hover:bg-emerald-500/10">Intro Video</a>
+        <a href="https://calendly.com/inspirateconsulting/15min" target="_blank"
+           class="inline-block mt-2 px-6 py-3 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-300 hover:bg-emerald-500/50 transition shadow-md shadow-emerald-500/20 font-semibold">
             Book Call
         </a>
     </div>
@@ -133,20 +160,20 @@
 <div class="mx-auto space-y-32">
 
     <!-- 1. Hero Section -->
-    <section class="hero-gradient-bg text-center space-y-8 pt-40">
-        <h1 class="text-xl sm:text-2xl font-light text-slate-400">
+    <section class="hero-gradient-bg text-center space-y-8 pt-40 px-6">
+        <h1 class="text-lg sm:text-2xl font-light text-slate-400">
             For <span class="font-black text-slate-300">Ambitious </span> 8-11th Grade Students and Parents
         </h1>
         <h1 class="animate__animated animate__fadeIn animate__slow text-5xl sm:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-b from-emerald-500 to-emerald-300 pb-4 drop-shadow-lg">
             No Fluff. Just Strategy.
         </h1>
-        <p class="text-xl text-slate-400 max-w-3xl mx-auto">We work with ambitious students who want personalized support, not generic advice, to make their applications stand out.</p>
+        <p class="text-sm md:text-xl text-slate-400 max-w-3xl mx-auto">We work with ambitious students who want personalized support, not generic advice, to make their applications stand out.</p>
         <a href="https://calendly.com/inspirateconsulting/15min" target="_blank" class=" animate-pulse inline-flex items-center glow-btn text-white bg-emerald-600 hover:bg-emerald-500 px-6 py-3 rounded-md font-semibold text-lg">
             <span class="material-icons mr-2">calendar_today</span> Book Your Discovery Call
         </a>
         <div class="h-20"></div>
         <!-- 2. Trust Bar (Scrolling Logos) -->
-        <section class="mx-20 overflow-hidden relative">
+        <section class="mx-8 md:mx-20 overflow-hidden relative">
             <!-- Fade edges -->
             <div class="pointer-events-none absolute inset-y-0 left-0 w-16 z-10 backdrop-blur-sm" ></div>
             <div class="pointer-events-none absolute inset-y-0 right-0 w-16 z-10 backdrop-blur-sm"></div>
@@ -165,7 +192,7 @@
                  </div>
 
             <p class="text-center text-slate-400 text-sm mt-6">
-                Trusted by families who wanted the real thing—not recycled advice.
+                Trusted by families who wanted the real thing, not recycled advice.
             </p>
         </section>
 
@@ -176,7 +203,7 @@
 
 
     <!-- 3. Story + Radical Honesty -->
-    <section class="mx-20 space-y-8">
+    <section class="mx-8 md:mx-20 space-y-8" id="whyus">
         <h2 class="text-3xl font-bold text-center">This isn’t for everyone.</h2>
         <p class="text-center text-slate-400">And that’s by design.</p>
 
@@ -197,7 +224,7 @@
 
         <div class="text-center text-slate-400 max-w-2xl mx-auto text-sm">
             <p>We won’t sugarcoat it. What we do is real strategy, real support, and real work.</p>
-            <p class="mt-2">No guarantees — just a guarantee we’ll show up fully for you.</p>
+            <p class="mt-2">No guarantees. Just a guarantee we’ll show up fully for you.</p>
         </div>
 
         <div class="text-center">
@@ -208,7 +235,7 @@
     </section>
 
     <!-- 4. Problem + Solution -->
-    <section class="mx-20 space-y-8">
+    <section class="mx-8 md:mx-20 space-y-8">
         <h2 class="text-3xl font-bold text-center">Admissions is broken. Here’s how we fix it.</h2>
         <div class="grid sm:grid-cols-2 gap-6">
             <!-- The Problem -->
@@ -227,7 +254,7 @@
                     </li>
                     <li class="flex items-center gap-2">
                         <span class="material-icons text-red-500 text-base">close</span>
-                        Everyone says "stand out"—but how?
+                        Everyone says "stand out". But how?
                     </li>
                 </ul>
             </div>
@@ -262,7 +289,7 @@
     </section>
 
     <!-- 5. How It Works -->
-    <section class="mx-20 space-y-12">
+    <section class="mx-8 md:mx-20 space-y-12" id="flow">
         <h2 class="text-3xl font-bold text-center">Here’s what it looks like to work together</h2>
         <div class="grid sm:grid-cols-4 gap-6">
 
@@ -300,7 +327,7 @@
     </section>
 
     <!-- 6. Student Testimonial Videos -->
-    <section class="mx-20 space-y-10">
+    <section class="mx-8 md:mx-20 space-y-10" id="testimonials">
         <h2 class="text-3xl font-bold text-center">These are real stories from students who trusted the process</h2>
 
         <div class="grid sm:grid-cols-2 gap-8">
@@ -312,7 +339,7 @@
                 </div>
                 <div class="text-sm text-slate-300 space-y-1">
                     <p class="font-semibold">Justin Sato – Stanford University</p>
-                    <p class="text-xs italic">“Your help closed the gap — it made the difference between rejection and Stanford.”</p>
+                    <p class="text-xs italic">“Your help closed the gap, it made the difference between rejection and Stanford.”</p>
                 </div>
             </div>
 
@@ -323,7 +350,7 @@
                 </div>
                 <div class="text-sm text-slate-300 space-y-1">
                     <p class="font-semibold">Neel Patel – UF Honors Program</p>
-                    <p class="text-xs italic">“My essay stood out — and I got into my top choice. Worth it.”</p>
+                    <p class="text-xs italic">“My essay stood out, and I got into my top choice. Worth it.”</p>
                 </div>
             </div>
 
@@ -334,7 +361,7 @@
                 </div>
                 <div class="text-sm text-slate-300 space-y-1">
                     <p class="font-semibold">Nancy Armstrong – Parent (Rose-Hulman Institute)</p>
-                    <p class="text-xs italic">“We finally felt someone had our back — and knew how to guide him.”</p>
+                    <p class="text-xs italic">“We finally felt someone had our back, and knew how to guide him.”</p>
                 </div>
             </div>
 
@@ -361,7 +388,7 @@
 
 
     <!-- 7. No Fine Print -->
-    <section class="mx-20 space-y-8">
+    <section class="mx-8 md:mx-20 space-y-8">
         <h2 class="text-3xl font-bold text-center">No fine print. No fake guarantees.</h2>
         <div class="grid sm:grid-cols-2 gap-6">
 
@@ -393,12 +420,11 @@
     </section>
 
     <!-- Step 1 -->
-    <h2 class="text-3xl font-bold text-center">Get Started</h2>
+    <div class="bg-black/80 p-6 border border-emerald-700 rounded-2xl shadow-md hover:shadow-lg transition col-span-2 max-w-4xl mx-auto mb-8">
 
-    <div class="bg-black/80 p-6 border border-emerald-700 rounded-2xl shadow-md hover:shadow-lg transition col-span-2 max-w-4xl mx-auto my-8">
         <div class="flex items-center mb-4">
             <span class="material-icons text-emerald-400 mr-2 text-2xl">rocket_launch</span>
-            <h3 class="text-lg font-semibold text-white">1. Watch Intro Video</h3>
+            <h3 class="text-lg font-semibold text-white">Watch Intro Video</h3>
         </div>
         <p class="text-emerald-300 mb-4 max-w-xl">
             Start by watching our quick overview to see how we’ll craft your unique story.
@@ -412,28 +438,11 @@
         ></iframe>
     </div>
 
-    <!-- Step 2 -->
-    <div class="bg-black/80 p-6 border border-emerald-700 rounded-2xl shadow-md hover:shadow-lg transition col-span-2 max-w-4xl mx-auto my-8">
-        <div class="flex items-center mb-4">
-            <span class="material-icons text-emerald-400 mr-2 text-2xl">handshake</span>
-            <h3 class="text-lg font-semibold text-white">2. Strategy Call</h3>
-        </div>
-        <p class="text-emerald-300 mb-4 max-w-xl">
-            Book your free 15-minute consult with an expert counselor.
-        </p>
-        <iframe
-                class="w-full aspect-video rounded-xl shadow-lg invert"
-                src="https://calendly.com/inspirateconsulting/15min?embed_domain=inspirateconsulting.net&embed_type=Inline&hide_gdpr_banner=1"
-                allowfullscreen
-                loading="lazy"
-                style="border-radius:0.75rem;"
-        ></iframe>
-    </div>
 
 
 
     <!-- 8. Final Call to Action -->
-    <section class="text-center space-y-6">
+    <section class="text-center space-y-6 px-6">
         <h2 class="text-3xl font-bold">Your future deserves a real plan.</h2>
         <p class="text-slate-400 max-w-xl mx-auto text-sm">We only take on a limited number of students. If you’re serious, now’s the time.</p>
         <a href="https://calendly.com/inspirateconsulting/15min" class="inline-flex items-center glow-btn bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-md font-semibold">
@@ -471,6 +480,34 @@
 
     </div>
 </footer>
+
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.remove('opacity-0', 'scale-95');
+                mobileMenu.classList.add('opacity-100', 'scale-100');
+            }, 10); // Small delay for transition
+        } else {
+            mobileMenu.classList.remove('opacity-100', 'scale-100');
+            mobileMenu.classList.add('opacity-0', 'scale-95');
+            mobileMenu.addEventListener('transitionend', () => {
+                mobileMenu.classList.add('hidden');
+            }, { once: true });
+        }
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>
 
 
 </body>
